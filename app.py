@@ -3,7 +3,10 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-model = pickle.load(open('movie_dict.pkl','movie_list.pkl','similarity.pkl', 'rb'))
+
+movie_dict = pickle.load(open('movie_dict.pkl', 'rb'))
+movie_list = pickle.load(open('movie_list.pkl', 'rb'))
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 @app.route('/')
 def home():
